@@ -1,0 +1,11 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+.main{
+  background-color: rgb(253, 252, 252);
+}
