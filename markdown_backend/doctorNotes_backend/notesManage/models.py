@@ -15,7 +15,7 @@ class User(AbstractUser):
 
 class Notes(models.Model):
     title = models.CharField(max_length=100)
-    notes = models.CharField(max_length=500, null=True, blank=True)
+    notes = models.TextField(null = True, blank= True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     file = models.FileField(upload_to='uploads/', null=True, blank=True)
 

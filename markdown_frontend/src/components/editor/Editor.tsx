@@ -37,7 +37,6 @@ function Editor() {
   }, []);
 
   const [file, setFile] = useState<any>(null);
-  const [mode, setMode] = useState("edit");
 
   const handleUpload = (event: any) => {
     event.preventDefault();
@@ -76,11 +75,9 @@ function Editor() {
       setTitle("");
       setMarkdown("");
       setFile(null);
+    }else{
+      alert(resJson.data)
     }
-  };
-
-  const toggleMode = () => {
-    setMode(mode === "edit" ? "preview" : "edit");
   };
 
   return (
@@ -116,7 +113,7 @@ function Editor() {
       <div className="upload-button">
         <input type="file" onChange={handleUpload} />
       </div>
-      <button className="submit" onClick={handleOnSubmit}>
+      <button className="submit" onClick={handleOnSubmit} disabled={mark=="" || !file || title==""}>
         Submit
       </button>
     </div>
